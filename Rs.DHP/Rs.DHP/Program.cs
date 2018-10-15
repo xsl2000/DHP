@@ -39,7 +39,7 @@ namespace Rs.DHP
                 if (configs != null && configs.ToList().Count > 0)
                     configs.ToList().ForEach(p => { config.AddJsonFile(p, optional: false, reloadOnChange: true); });
             })
-            .UseUrls("http://0.0.0.0:8091")
+            //.UseUrls("http://0.0.0.0:8091")
             .UseStartup<Startup>()
             .Build();
     }
