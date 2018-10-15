@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -17,7 +18,7 @@ namespace Rs.DHP
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -54,16 +55,31 @@ namespace Rs.DHP
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials());
+            app.UseDefaultFiles();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+            //app.UseCookiePolicy();
+            app.Use(async (context, next) => {
+                string token = context.Request.Headers["Authorization"];
+                if(!string.IsNullOrWhiteSpace(token) && (token=token.Split(' ').Last()).Length == 32)
+                {
+                    var config = (IConfiguration)AppDomain.CurrentDomain.GetData("Configuration");
+                    context.Request.Headers["Authorization"] = token;
+                }
+                await next.Invoke();
             });
+            app.UseAuthentication();
+            app.UseMvc();
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //});
+            AppDomain.CurrentDomain.SetData("DataPath", Path.Combine(env.ContentRootPath, "DataPath"));
+            AppDomain.CurrentDomain.SetData("Configuration", Configuration);
+            AppDomain.CurrentDomain.SetData("ContentRootPath", env.ContentRootPath);
         }
     }
 }
