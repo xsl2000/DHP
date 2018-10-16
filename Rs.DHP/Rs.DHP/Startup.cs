@@ -70,13 +70,12 @@ namespace Rs.DHP
                 await next.Invoke();
             });
             app.UseAuthentication();
-            app.UseMvc();
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
             AppDomain.CurrentDomain.SetData("DataPath", Path.Combine(env.ContentRootPath, "DataPath"));
             AppDomain.CurrentDomain.SetData("Configuration", Configuration);
             AppDomain.CurrentDomain.SetData("ContentRootPath", env.ContentRootPath);
