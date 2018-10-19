@@ -30,3 +30,7 @@ D:\DHP\DHP\Rs.DHP\Rs.DHP\obj\Debug\netcoreapp2.1\Rs.DHP.Views.pdb
 D:\DHP\DHP\Rs.DHP\Rs.DHP\obj\Debug\netcoreapp2.1\Rs.DHP.dll
 D:\DHP\DHP\Rs.DHP\Rs.DHP\obj\Debug\netcoreapp2.1\Rs.DHP.pdb
 D:\DHP\DHP\Rs.DHP\Rs.DHP\obj\Debug\netcoreapp2.1\Rs.DHP.csproj.CopyComplete
+D:\DHP\DHP\Rs.DHP\Rs.DHP\bin\Debug\netcoreapp2.1\Rs.DCV.Views.dll
+D:\DHP\DHP\Rs.DHP\Rs.DHP\bin\Debug\netcoreapp2.1\Rs.DCV.Views.pdb
+D:\DHP\DHP\Rs.DHP\Rs.DHP\bin\Debug\netcoreapp2.1\Rs.DCV.dll
+D:\DHP\DHP\Rs.DHP\Rs.DHP\bin\Debug\netcoreapp2.1\Rs.DCV.pdb
