@@ -12,35 +12,28 @@ namespace Rs.DHP
 {
     public class Program
     {
-        static private string m_configFileName = "Configs";
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Run();
+            CreateWebHostBuilder(args).Build().Run();
         }
 
-        public static IWebHost CreateWebHostBuilder(string[] args) =>
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((hostingContext, config) =>
+            .ConfigureAppConfiguration((hostcontent, config) => {
+                //添加相应的配置文件
+            var env = hostcontent.HostingEnvironment;
+            string dir = Path.GetFullPath(env.ContentRootPath);
+            string Folder = Path.Combine(dir, "Configs");
+            if (!Directory.Exists(Folder))
             {
-                var env = hostingContext.HostingEnvironment;
-                string dir = Path.GetFullPath(env.ContentRootPath);
-                string settingsFolder = Path.Combine(dir, m_configFileName);
-                if (!Directory.Exists(settingsFolder))
-                {
-                    Directory.CreateDirectory(settingsFolder);
-                    dir = Path.GetFullPath(env.ContentRootPath + "/..");
-                }
-                //settingsFolder = Path.Combine(dir, m_configFileName);
-                //if (!Directory.Exists(settingsFolder))
-                //    dir = Path.GetFullPath(env.ContentRootPath + "/bin");
-                //settingsFolder = Path.Combine(dir, m_configFileName);
-                Console.WriteLine($"Read Config files from {settingsFolder}");
-                var configs = Directory.GetFiles(settingsFolder, "*.json");
-                if (configs != null && configs.ToList().Count > 0)
-                    configs.ToList().ForEach(p => { config.AddJsonFile(p, optional: false, reloadOnChange: true); });
+                Directory.CreateDirectory(Folder);
+
+            }
+            Console.WriteLine($"Read Config files from {Folder}");
+            var configs = Directory.GetFiles("Configs", "*.json");
+            if (configs != null && configs.ToList().Count > 0)
+                configs.ToList().ForEach(p => { config.AddJsonFile(p, optional: false, reloadOnChange: true); });
             })
-            //.UseUrls("http://0.0.0.0:8091")
-            .UseStartup<Startup>()
-            .Build();
+            .UseStartup<Startup>();
     }
 }
