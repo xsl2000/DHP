@@ -3,12 +3,7 @@ D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.RazorAssemblyInfo.cache
 D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.RazorAssemblyInfo.cs
 D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.AssemblyInfoInputs.cache
 D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.AssemblyInfo.cs
-D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.TagHelpers.input.cache
-D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.TagHelpers.output.cache
-D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.RazorCoreGenerate.cache
-D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Razor\Dashbord\Pages\Dashbord.g.cshtml.cs
 D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.RazorTargetAssemblyInfo.cache
-D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.RazorTargetAssemblyInfo.cs
 D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.dll
 D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.pdb
 D:\DHP\DHP\Rs.DHP\Rs.DCV\bin\Debug\netstandard2.0\Rs.DCV.deps.json
@@ -129,6 +124,5 @@ D:\DHP\DHP\Rs.DHP\Rs.DCV\bin\Debug\netstandard2.0\refs\System.Xml.XPath.dll
 D:\DHP\DHP\Rs.DHP\Rs.DCV\bin\Debug\netstandard2.0\refs\System.Xml.XPath.XDocument.dll
 D:\DHP\DHP\Rs.DHP\Rs.DCV\bin\Debug\netstandard2.0\Rs.DCV.Views.dll
 D:\DHP\DHP\Rs.DHP\Rs.DCV\bin\Debug\netstandard2.0\Rs.DCV.Views.pdb
-D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.Views.pdb
 D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.csproj.CopyComplete
 D:\DHP\DHP\Rs.DHP\Rs.DCV\obj\Debug\netstandard2.0\Rs.DCV.csprojAssemblyReference.cache

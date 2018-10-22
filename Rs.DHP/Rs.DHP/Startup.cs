@@ -12,8 +12,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Serialization;
 
-using Rs.DCV.Extensions;
-
 namespace Rs.DHP
 {
     public class Startup
@@ -34,9 +32,7 @@ namespace Rs.DHP
                     option.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
                     option.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 });
-            services.AddDcv(x=> {
-                
-            });          //添加数据采集分析内容
+            //添加数据采集分析内容
             //services.Configure<CookiePolicyOptions>(options =>
             //{
             //    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -66,8 +62,7 @@ namespace Rs.DHP
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             //app.UseCookiePolicy();
-            app.UseDcv(x=> { });
-            //app.UseMvc();
+            app.UseMvc();
             AppDomain.CurrentDomain.SetData("DataPath", Path.Combine(env.ContentRootPath, "DataPath"));
             AppDomain.CurrentDomain.SetData("Configuration", Configuration);
             AppDomain.CurrentDomain.SetData("ContentRootPath", env.ContentRootPath);
