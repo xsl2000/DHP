@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configs\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Rs.DCV\Rs.DCV.csproj" />
   </ItemGroup>
 

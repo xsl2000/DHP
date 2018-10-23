@@ -11,14 +11,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Serialization;
+using Rs.DCV;
 
 namespace Rs.DHP
 {
     public class Startup
     {
+        private readonly ModuleStartup moduleStartup;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            this.moduleStartup = new ModuleStartup(configuration);
+            
         }
 
         public IConfiguration Configuration { get; }
@@ -41,7 +45,7 @@ namespace Rs.DHP
             //});
 
 
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //services.AddMvc().AddRazorPagesOptions(option => option.RootDirectory = "/Content");
         }
 
