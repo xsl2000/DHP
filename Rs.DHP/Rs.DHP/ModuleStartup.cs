@@ -20,19 +20,23 @@ namespace Rs.DHP
             this._configuration = configuration ??
                 throw new ArgumentNullException(nameof(configuration));
             ModulesOptions options = configuration.Get<ModulesOptions>();
-            this._modules = options.Modules.Select(s => {
-                Type type = Type.GetType($"{s.Type}.MoudleInjector,{s.Type}");
-                if (type == null)
-                {
-                    Console.WriteLine($"不能导入{s.Type}", Color.Red);
-                    return null;
-                }
-                else
-                {
-                    IModule module = (IModule)Activator.CreateInstance(type);
-                    return module;
-                }
-            });
+            if(options.Modules!=null&&options.Modules.Count>0)
+            {
+                this._modules = options.Modules.Select(s => {
+                    Type type = Type.GetType($"{s.Type}.MoudleInjector,{s.Type}");
+                    if (type == null)
+                    {
+                        Console.WriteLine($"不能导入{s.Type}", Color.Red);
+                        return null;
+                    }
+                    else
+                    {
+                        IModule module = (IModule)Activator.CreateInstance(type);
+                        return module;
+                    }
+                });
+            }
+            
         }
 
         public void ConfigureServices(IServiceCollection service)
