@@ -1,7 +1,7 @@
 //数据库配置文件
 {
   "Database": {
-    "ConnectionString": "",
-    "DbType": "MsSql"
+    "ConnectionString": "User ID=postgres;Password=postgres;Host=10.3.20.41;Port=5432;Database=FHIR;Pooling=true;",
+    "DbType": "PgSql"
   }
 }

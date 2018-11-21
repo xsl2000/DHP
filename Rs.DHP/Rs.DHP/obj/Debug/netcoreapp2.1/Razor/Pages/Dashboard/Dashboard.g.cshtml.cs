@@ -55,7 +55,7 @@ using Rs.DHP;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n\r\n<html>\r\n");
             EndContext();
             BeginContext(110, 104, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f8a1bb1a52bd4c72b5eeffd134037fd0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d3efd7ffa444d2db3e7c46713e112d9", async() => {
                 BeginContext(116, 91, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>Dashboard</title>\r\n");
                 EndContext();
@@ -75,7 +75,7 @@ using Rs.DHP;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(216, 15, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54b7f0c72eac4bed878a61cc36f71340", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a239392e4b054fd0b9586c6fd47779b4", async() => {
                 BeginContext(222, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();

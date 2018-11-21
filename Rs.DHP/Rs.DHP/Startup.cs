@@ -47,6 +47,8 @@ namespace Rs.DHP
             services.AddSingleton<IDatabaseConfiguring, DataBaseConfigs>();
             var kk = Configuration.GetSection("Database").Get<DatabaseOption>();
             services.AddSingleton(Configuration.GetSection("Database").Get<DatabaseOption>());
+            
+            services.AddDbContext<DataBaseContext>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //services.AddMvc().AddRazorPagesOptions(option => option.RootDirectory = "/Content");
         }
