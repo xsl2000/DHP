@@ -46,6 +46,7 @@ namespace Rs.DHP
 
         public void Configure(IApplicationBuilder app)
         {
+            //this is my first test.
             foreach (IModule module in this._modules)
             {
                 module.Configure(app);
