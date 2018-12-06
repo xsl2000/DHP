@@ -17,11 +17,11 @@ namespace Rs.DHP
 {
     public class Startup
     {
-        private readonly ModuleStartup moduleStartup;
+        //private readonly ModuleStartup moduleStartup;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            this.moduleStartup = new ModuleStartup(configuration);
+            //this.moduleStartup = new ModuleStartup(configuration);
             
         }
 
@@ -44,7 +44,11 @@ namespace Rs.DHP
             //    options.MinimumSameSitePolicy = SameSiteMode.None;
             //});
 
-
+            services.AddSingleton<IDatabaseConfiguring, DataBaseConfigs>();
+            var kk = Configuration.GetSection("Database").Get<DatabaseOption>();
+            services.AddSingleton(Configuration.GetSection("Database").Get<DatabaseOption>());
+            
+            services.AddDbContext<DataBaseContext>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //services.AddMvc().AddRazorPagesOptions(option => option.RootDirectory = "/Content");
         }
